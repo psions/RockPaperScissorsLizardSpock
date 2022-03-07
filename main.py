@@ -1,3 +1,5 @@
 from player import Player
 
-Player()
+
+
+PlayerChoice()
