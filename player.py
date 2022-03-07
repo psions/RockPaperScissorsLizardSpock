@@ -1,6 +1,12 @@
 class Player:
     
+    
+    def __init__(self) -> None:
+        pass
+
+
     def PlayerChoice():
+
         choice = int(input(" What do you choose?"))
         if choice == 0:
             print(" You chose Rock")
@@ -14,7 +20,9 @@ class Player:
             print("You chose Spock, live long and prosper")
         elif choice > 4:
             print(" Invalid Entry, Try Again!")
+            choice = int(input(" What do you choose?"))
         elif choice < 0:
             print(" Invalid Entry, Try Again!")
+            choice = int(input(" What do you choose?"))
         return choice
 
