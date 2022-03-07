@@ -5,7 +5,7 @@ class Player:
         pass
 
 
-    def PlayerChoice():
+    def PlayerChoice(self):
 
         choice = int(input(" What do you choose?"))
         if choice == 0:

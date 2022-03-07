@@ -1,6 +1,8 @@
 import random
-import player
-import AI
+from player import Player
+from ai import AI_Choice
+from gestures import Gesture
+
 
 
 # (5 points): As a developer, I want to make at least 10 commits with descriptive messages.
@@ -18,39 +20,52 @@ import AI
 # (10 points): As a player, I want the game of RPSLS to be at minimum a “best of three” to decide a winner.
 
 # (10 points): As a player, I want the option of a single player (human vs AI) or a multiplayer (human vs human) game
+class Game_Board:
 
-def rules_of_game():
-    rules = print( " Rock crushes Scissors, /n Scissors cuts Paper, /n Paper covers Rock, /n Rock crushes Lizard, /n Lizard poisons Spock,/n Spock smashes Scissors, /n Scissors decapitates Lizard, /n Lizard eats Paper, /n Paper disproves Spock, /n Spock vaporizes Rock ")
-
-
-    print(rules)
-## Greeting under this
-
-def display_greeting():
-    print("Welcome to Rock, Paper, Scissors, Lizard, Spock")
-
-
-def single_or_multiplayer():
-    choice = int(input("Do you want to play solo (1) or multiplayer (2): "))
+    def rules_of_game(self):
+        print("Rock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock")
+        print("")
     
-    if choice == 1:
-        print("You are playing Solo")
-    elif choice == 2:
-        print("You are playing Multiplayer")
+    def run_game(self):
+        self.display_greeting()
+        self.rules_of_game()
+        self.single_or_multiplayer()
+        self.chosen_gesture = 0
+        self.display_gesture_options()
+    
+    def display_greeting(self):
+        print("Welcome to Rock, Paper, Scissors, Lizard, Spock")
+        print("")
+
+    def single_or_multiplayer(self):
+        choice = int(input("Do you want to play solo (1) or multiplayer (2): "))
+    
+        if choice == 1:
+            print("You are playing Solo")
+            self.solo_game()
+        elif choice == 2:
+            print("You are playing Multiplayer")
+            self.multiplayer()
+
+    def display_gesture_options(self): 
+        for item in self.gesture_list:
+            print(item)
 
 
+    def compare_gestures(self):
+        pass
 
-def display_gesture_options(): 
-    pass 
+    def determine_round_winner(self):
+        pass
 
-def compare_gestures():
-    pass
+    def check_game_score(self):
+        pass
 
-def determine_round_winner():
-    pass
+    def play_again(self):
+        pass
 
-def check_game_score():
-    pass
+    def solo_game(self):
+        pass
 
-def play_again():
-    pass
+    def multiplayer(self):
+        pass
