@@ -1,7 +1,7 @@
-import random
-from player import Player
+
 from ai import AI
 from human import Human
+
 
 
 
@@ -23,8 +23,7 @@ from human import Human
 # (10 points): As a player, I want the option of a single player (human vs AI) or a multiplayer (human vs human) game
 class Game_Board:
     def __init__(self):
-        self.chosen_gesture = ""
-        self.player_one = Human()
+        self.player_one = Human("player 1")
         self.player_two = None
     
     def run_game(self):
@@ -46,24 +45,72 @@ class Game_Board:
     
         if choice == 1:
             print("You chose single player")
+            self.player_two = AI("player 2")
             self.solo_game()
-            self.player_two = AI()
+            
         elif choice == 2:
             print("You chose multiplayer")
+            self.player_two = Human("player 2")
             self.multiplayer()
-            self.player_two = Human()
-
-    def display_gesture_options(self): 
-        count = 0
-        gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
-        for item in gesture_list:
-            print(f"Enter {count} to use {item}")
-            count += 1    
-        
+            
+    def compare_choices(self):
+    
+        if Human.chosen_gesture == AI.chosen_gesture:
+            print("tie")
 
 
-    def compare_gestures(self):
-        pass
+        elif Human.chosen_gesture == "Rock":
+            if AI.chosen_gesture == "Paper":
+                print("Player 2 is the winner")
+                AI.score += 1
+            elif AI == "scissors":
+                print("Player 1 is the winner")
+                Human.score +=1
+            elif AI == "Lizard":
+                print("You win", {Human}"crushes" {AI})
+            elif AI == "Spock":
+                print("You lose", {AI}, "Vaporizes" {Human})
+
+
+        elif Human == "Paper":
+            if AI == "scissors":
+                print("You lose", {AI} "cuts" {Human})
+            elif AI == "Rock":
+                print("You win", {Human} "covers" {AI})
+            elif AI == "Lizard":
+                print("You Lose" {AI} "eats" {Human}) 
+            elif AI == "Spock":
+                print("You win", {Human} "disproves" {AI})
+
+        elif Human == "Scissors":
+            if AI == "Paper":
+                print("You Win", {Human} "cuts {AI}")
+            elif AI == "Rock":
+                print("You Lose" {AI} "crushes" {Human})
+            elif AI == "Lizard":
+                print("You Win" {Human} "Decapitates" {AI})
+            elif AI == "Spock":
+                print("You Lose" {AI} "Smashes" {Human})
+
+        elif Human == "Lizard":
+            if AI =="Rock":
+                print("You Lose", {AI} "Crushes" {Human})
+            elif AI == "Paper":
+                print("You Win", {Human} "Eats" {AI})
+            elif AI =="Scissors":
+                print("You lose", {AI} "Decapitates" {Human})
+            elif AI == "Spock":
+                print("You Win", {Human} "poisons" {AI})
+
+        elif Human == "Spock":
+            if AI == "Rock":
+                print("You win", {Human} "Vaporizes" {AI})
+            elif AI == "Paper":
+                print(" You Lose" {AI} "disproves" {Human})
+            elif AI == "Scissors":
+                print("You Win", {Human} "smashes" {AI})
+            elif AI == "Lizard":
+                print("You lose" {AI} "Poisons" {Human})
 
     def determine_round_winner(self):
         pass
@@ -75,7 +122,8 @@ class Game_Board:
         pass
 
     def solo_game(self):
-        Human()
-
+        Human.choose_gesture(self)
+        AI.choose_gesture(self)
+        compare_choices()
     def multiplayer(self):
         pass
