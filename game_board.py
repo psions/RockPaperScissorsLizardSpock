@@ -136,6 +136,7 @@ class Game_Board:
         Human.choose_gesture(self)
         AI.choose_gesture(self)
         compare_choices()
+        pass
     def multiplayer(self):
         pass
 

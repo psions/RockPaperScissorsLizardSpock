@@ -8,6 +8,7 @@ class Human(Player):
     def choose_gesture(self):
         count = 0
         for item in self.gestures:
+            
             print(f"Enter {count} to use {item}")
             count += 1
         player_choice = input("Make your choice: ")
