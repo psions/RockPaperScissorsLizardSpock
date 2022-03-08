@@ -2,7 +2,11 @@ class Player:
     
     
     def __init__(self):
+<<<<<<< HEAD
         # self.name = name
+=======
+#        self.name = name
+>>>>>>> fccc0f77be3fe6c1c8d6e11946d48ce092478546
         self.score = 0
         self.chosen_gesture = None
 
