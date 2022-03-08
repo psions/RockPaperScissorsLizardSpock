@@ -1,6 +1,7 @@
 import random
 from player import Player
 from ai import AI_Choice
+from human import Human
 
 
 
@@ -23,6 +24,8 @@ from ai import AI_Choice
 class Game_Board:
     def __init__(self):
         self.chosen_gesture = ""
+        self.player_one = Human()
+        self.player_two = None
     
     def run_game(self):
         self.display_greeting()
@@ -44,9 +47,11 @@ class Game_Board:
         if choice == 1:
             print("You are playing Solo")
             self.solo_game()
+            self.player_two = AI_Choice()
         elif choice == 2:
             print("You are playing Multiplayer")
             self.multiplayer()
+            self.player_two = Human()
 
     def display_gesture_options(self): 
         count = 0
