@@ -1,30 +1,31 @@
 class Player:
     
     
-    def __init__(self) 
-        self.name = ''
+    def __init__(self, name):
+        self.name = name
+        #
         self.score = 0
-        self.chosen_gesture = []
+        self.chosen_gesture = None
 
 
-    def PlayerChoice(self):
-
-        choice = int(input(" What do you choose?"))
-        if choice == 0:
-            print(" You chose Rock")
-        elif choice == 1:
-            print(" You chose Paper")
-        elif choice == 2:
-            print(" You chose scissors")
-        elif choice == 3:
-            print(" You chose Lizard")
-        elif choice == 4:
-            print("You chose Spock, live long and prosper")
-        elif choice > 4:
-            print(" Invalid Entry, Try Again!")
-            choice = int(input(" What do you choose?"))
-        elif choice < 0:
-            print(" Invalid Entry, Try Again!")
-            choice = int(input(" What do you choose?"))
-        return choice
-
+    def choose_gesture(self):
+        self.gestures = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        count = 0
+        for item in self.gestures:
+            print(f"Enter {count} to use {item}")
+        player_choice = input("Make your choice: ")
+        if player_choice == "0":
+            self.chosen_gesture = self.gestures[0]
+            print(f"{self.name} has chosen Rock")
+        if player_choice == "1":
+            self.chosen_gesture = self.gestures[1]
+            print(f"{self.name} has chosen Paper")
+        if player_choice == "2":
+            self.chosen_gesture = self.gestures[2]
+            print(f"{self.name} has chosen Scissors")
+        if player_choice == "3":
+            self.chosen_gesture = self.gestures[3]
+            print(f"{self.name} has chosen Lizard")
+        if player_choice == "4":
+            self.chosen_gesture = self.gestures[4]
+            print(f"{self.name} has chosen Spock")
