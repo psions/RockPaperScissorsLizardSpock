@@ -1,6 +1,10 @@
 from ai import AI
 from human import Human
 
+
+
+
+
 # (5 points): As a developer, I want to make at least 10 commits with descriptive messages.
 # (15 points): As a developer, I want to find a way to properly incorporate inheritance into my game.
 # (5 points): As a developer, I want to account for and handle bad user input, ensuring that any user input is validated and reobtained if necessary.
@@ -35,25 +39,91 @@ class Game_Board:
         choice = int(input("Do you want to play solo (1) or multiplayer (2): "))
     
         if choice == 1:
-            print("You are playing Solo")
-            self.solo_game()
+            print("You chose single player")
             self.player_two = AI("player 2")
+            self.solo_game()
+            
         elif choice == 2:
-            print("You are playing Multiplayer")
-            self.multiplayer()
+            print("You chose multiplayer")
             self.player_two = Human("player 2")
-
-    def display_gesture_options(self): 
-        count = 0
-        gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
-        for item in gesture_list:
-            print(f"Enter {count} to use {item}")
-            count += 1    
-        
+            self.multiplayer()
+            
+    def compare_choices(self):
+    
+        if Human.chosen_gesture == AI.chosen_gesture:
+            print("tie")
 
 
-    def compare_gestures(self):
-        pass
+        elif Human.chosen_gesture == "Rock":
+            if AI.chosen_gesture == "Paper":
+                print("Player 2 is the winner")
+                AI.score += 1
+            elif AI.chosen_gesture == "scissors":
+                print("Player 1 is the winner")
+                Human.score +=1
+            elif AI.chosen_gesture == "Lizard":
+                print("Player 1 is the winner")
+                Human.score +=1
+            elif AI.chosen_gesture == "Spock":
+                print("Player 2 is the winner")
+                AI.score += 1
+
+
+        elif Human.chosen_gesture == "Paper":
+            if AI.chosen_gesture == "scissors":
+                print("Player 2 is the winner")
+                AI.score += 1
+            elif AI.chosen_gesture == "Rock":
+                print("Player 1 is the winner")
+                Human.score +=1
+            elif AI.chosen_gesture == "Lizard":
+                print("Player 2 is the winner")
+                AI.score += 1
+            elif AI.chosen_gesture == "Spock":
+                print("Player 1 is the winner")
+                Human.score +=1
+
+        elif Human.chosen_gesture == "Scissors":
+            if AI.chosen_gesture == "Paper":
+                print("Player 1 is the winner")
+                Human.score +=1
+            elif AI.chosen_gesture == "Rock":
+                print("Player 2 is the winner")
+                AI.score += 1
+            elif AI.chosen_gesture == "Lizard":
+                print("Player 1 is the winner")
+                Human.score +=1
+            elif AI.chosen_gesture == "Spock":
+                print("Player 2 is the winner")
+                AI.score += 1
+
+        elif Human.chosen_gesture == "Lizard":
+            if AI.chosen_gesture =="Rock":
+                print("Player 2 is the winner")
+                AI.score += 1
+            elif AI.chosen_gesture == "Paper":
+                print("Player 1 is the winner")
+                Human.score +=1
+            elif AI.chosen_gesture =="Scissors":
+                print("Player 2 is the winner")
+                AI.score += 1
+            elif AI.chosen_gesture == "Spock":
+                print("Player 1 is the winner")
+                Human.score +=1
+
+        elif Human.chosen_gesture == "Spock":
+            if AI.chosen_gesture == "Rock":
+                print("Player 1 is the winner")
+                Human.score +=1
+            elif AI.chosen_gesture == "Paper":
+                print("Player 2 is the winner")
+                AI.score += 1
+            elif AI.chosen_gesture == "Scissors":
+                print("Player 1 is the winner")
+                Human.score +=1
+            elif AI.chosen_gesture == "Lizard":
+                print("Player 2 is the winner")
+                AI.score += 1
 
     def determine_round_winner(self):
         pass
@@ -63,10 +133,9 @@ class Game_Board:
         
 
     def solo_game(self):
-        Human.chosen_gesture(self)
-        AI.chosen_gesture(self)
-    
-
+        Human.choose_gesture(self)
+        AI.choose_gesture(self)
+        compare_choices()
     def multiplayer(self):
         pass
 
