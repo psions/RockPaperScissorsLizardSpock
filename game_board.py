@@ -21,20 +21,24 @@ from gestures import Gesture
 
 # (10 points): As a player, I want the option of a single player (human vs AI) or a multiplayer (human vs human) game
 class Game_Board:
+    def __init__(self) -> None:
+        self.gestures = Gesture()
+        self.chosen_gesture = 0
 
-    def rules_of_game(self):
-        print("Rock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock")
-        print("")
+    
     
     def run_game(self):
         self.display_greeting()
         self.rules_of_game()
         self.single_or_multiplayer()
-        self.chosen_gesture = 0
         self.display_gesture_options()
     
     def display_greeting(self):
         print("Welcome to Rock, Paper, Scissors, Lizard, Spock")
+        print("")
+
+    def rules_of_game(self):
+        print("Rock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock")
         print("")
 
     def single_or_multiplayer(self):
@@ -48,8 +52,11 @@ class Game_Board:
             self.multiplayer()
 
     def display_gesture_options(self): 
-        for item in self.gesture_list:
-            print(item)
+        count = 0
+        for item in self.gestures.gesture_list:
+            print(f"Enter {count} to use {item}")
+            count += 1    
+        
 
 
     def compare_gestures(self):
