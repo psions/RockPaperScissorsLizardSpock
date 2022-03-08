@@ -1,6 +1,6 @@
 import random
 from player import Player
-from ai import AI_Choice
+from ai import AI
 from human import Human
 
 
@@ -45,11 +45,11 @@ class Game_Board:
         choice = int(input("Do you want to play solo (1) or multiplayer (2): "))
     
         if choice == 1:
-            print("You are playing Solo")
+            print("You chose single player")
             self.solo_game()
-            self.player_two = AI_Choice()
+            self.player_two = AI()
         elif choice == 2:
-            print("You are playing Multiplayer")
+            print("You chose multiplayer")
             self.multiplayer()
             self.player_two = Human()
 
