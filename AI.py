@@ -5,8 +5,8 @@ from time import sleep
 
 class AI(Player):
         
-    def __init__(self, name):
-        super().__ini__()
+    def __init__(self):
+        super().__init__()
         self.gestures = None
 
     def choose_gesture(self):

@@ -75,7 +75,7 @@ class Game_Board:
         pass
 
     def solo_game(self):
-        pass
+        Human()
 
     def multiplayer(self):
         pass
