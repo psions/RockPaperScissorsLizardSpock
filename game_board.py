@@ -45,11 +45,11 @@ class Game_Board:
         choice = int(input("Do you want to play solo (1) or multiplayer (2): "))
     
         if choice == 1:
-            print("You chose single player")
+            print("You are playing Solo")
             self.solo_game()
-            self.player_two = AI()
+            self.player_two = AI_Choice()
         elif choice == 2:
-            print("You chose multiplayer")
+            print("You are playing Multiplayer")
             self.multiplayer()
             self.player_two = Human()
 
@@ -71,11 +71,11 @@ class Game_Board:
     def check_game_score(self):
         pass
 
-    def play_again(self):
-        pass
-
     def solo_game(self):
         pass
 
     def multiplayer(self):
+        pass
+
+    def play_again(self):
         pass

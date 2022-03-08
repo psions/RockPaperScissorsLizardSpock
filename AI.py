@@ -6,11 +6,11 @@ from time import sleep
 class AI(Player):
         
     def __init__(self, name):
-        super().__ini__()
+        super().__init__()
         self.gestures = None
 
     def choose_gesture(self):
         gestures = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
-        self. gestures = random.choice(gestures)
+        self.gestures = random.choice(gestures)
         return super().choose_gesture()
         
