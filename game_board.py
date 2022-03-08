@@ -118,12 +118,12 @@ class Game_Board:
     def check_game_score(self):
         pass
 
-    def play_again(self):
-        pass
-
     def solo_game(self):
         Human.choose_gesture(self)
         AI.choose_gesture(self)
         compare_choices()
     def multiplayer(self):
+        pass
+
+    def play_again(self):
         pass
