@@ -22,7 +22,7 @@ from ai import AI_Choice
 # (10 points): As a player, I want the option of a single player (human vs AI) or a multiplayer (human vs human) game
 class Game_Board:
     def __init__(self):
-        pass
+        self.chosen_gesture = ""
     
     def run_game(self):
         self.display_greeting()
