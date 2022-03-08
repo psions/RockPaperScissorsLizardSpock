@@ -1,7 +1,7 @@
 import random
 from player import Player
 from ai import AI_Choice
-from gestures import Gesture
+
 
 
 
@@ -21,11 +21,8 @@ from gestures import Gesture
 
 # (10 points): As a player, I want the option of a single player (human vs AI) or a multiplayer (human vs human) game
 class Game_Board:
-    def __init__(self) -> None:
-        self.gestures = Gesture()
-        self.chosen_gesture = 0
-
-    
+    def __init__(self):
+        pass
     
     def run_game(self):
         self.display_greeting()
@@ -53,7 +50,8 @@ class Game_Board:
 
     def display_gesture_options(self): 
         count = 0
-        for item in self.gestures.gesture_list:
+        gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        for item in gesture_list:
             print(f"Enter {count} to use {item}")
             count += 1    
         
