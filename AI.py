@@ -1,11 +1,15 @@
 from random import random
 from player import Player
+from time import sleep
 
 
 class AI_Choice(Player):
         
     def __init__(self) -> None:
         super().__init__()
+
+    def choose_gesture(self):
+        
         
 
     
